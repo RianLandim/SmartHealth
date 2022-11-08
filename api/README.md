@@ -71,3 +71,12 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+
+## Features
+
+- [] Login com google
+- [] Dados da api Fitness
+- [] Ranking de usuarios(baseado em score de atividades)
+- [] Dashboard de atividades e dados [Direto da api fitness google]
+- [] Competitivo entre usuários
