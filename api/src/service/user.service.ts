@@ -11,4 +11,13 @@ export class UsersService {
       data,
     });
   }
+
+  async getBasedOnScore() {
+    return await this.prisma.user.findMany({
+      orderBy: {
+        score: 'desc',
+      },
+      take: 10,
+    });
+  }
 }

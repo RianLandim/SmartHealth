@@ -77,6 +77,6 @@ Nest is [MIT licensed](LICENSE).
 
 - [] Login com google
 - [] Dados da api Fitness
-- [] Ranking de usuarios(baseado em score de atividades)
+- [x] Ranking de usuarios(baseado em score de atividades)
 - [] Dashboard de atividades e dados [Direto da api fitness google]
 - [] Competitivo entre usuários
