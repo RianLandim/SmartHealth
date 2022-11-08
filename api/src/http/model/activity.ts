@@ -5,4 +5,5 @@ export class CreateActivity {
   time: number;
   startTime: Date;
   endTime: Date;
+  userId: string;
 }

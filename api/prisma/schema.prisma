@@ -23,7 +23,7 @@ model User {
 model Activity {
   id        String       @id @default(uuid())
   type      ActivityType
-  time      Int
+  time      Float
   startTime DateTime
   endTime   DateTime
 
