@@ -38,3 +38,8 @@ enum ActivityType {
   CARDIO
   BODYBUILDING
 }
+
+model Test {
+  id   String @id @default(uuid())
+  name String
+}

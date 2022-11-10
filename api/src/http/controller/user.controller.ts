@@ -1,6 +1,7 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { CreateUser } from '../model/user';
 import { UsersService } from '../../service/user.service';
+import { Router } from 'express';
 
 @Controller('users')
 export class UsersController {
@@ -12,7 +13,12 @@ export class UsersController {
   }
 
   @Get()
-  findBasesOnScore() {
+  findBasedOnScore() {
     return this.usersService.getBasedOnScore();
+  }
+
+  @Get('test')
+  test() {
+    return 'test';
   }
 }
