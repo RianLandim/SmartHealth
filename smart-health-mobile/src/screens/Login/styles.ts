@@ -10,7 +10,6 @@ export const ContainerPage = styled.SafeAreaView`
 export const HeaderContainer = styled.View`
   flex: 2;
   width: 100%;
-  justify: flex-start;
   justify-content: center;
 `;
 export const LogoImage = styled.Image``;
@@ -43,7 +42,7 @@ export const SubTitleText = styled.Text`
 // ===> Config da footer com botão social
 export const FooterContainer = styled.View`
   flex: 1;
-  justify-container: center;
+  justify-content: center;
   align-items: center;
   margin-top: 10%;
 `;
