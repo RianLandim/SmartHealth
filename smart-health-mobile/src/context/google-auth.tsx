@@ -7,9 +7,13 @@ interface GoogleAuthContextProps {
   promptAsync: (options?: AuthRequestPromptOptions | undefined) => Promise<AuthSessionResult>
 }
 
+interface GoogleAuthProviderProps {
+  children: JSX.Element
+}
+
 const GoogleAuthContext = createContext<GoogleAuthContextProps>({} as GoogleAuthContextProps)
 
-export const GoogleAuthProvider = (children : JSX.Element) => {
+export const GoogleAuthProvider = ({ children } : GoogleAuthProviderProps) => {
   const [acessToken, setAcessToken] = useState<string | undefined>()
   
   const [request, response, promptAsync] = Google.useAuthRequest({
