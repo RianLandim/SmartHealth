@@ -15,20 +15,10 @@ import {
 } from "./styles";
 import logoGoogle from "../../assets/logo-google.png";
 import LogoApp from "../../assets/ProjectLogo.png";
+import { useGoogle } from "../../context/google-auth";
 
 export function Login() {
-  const [request, response, promptAsync] = Google.useAuthRequest({
-    expoClientId: process.env.REACT_GOOGLE_CLIENT_ID,
-    redirectUri: process.env.REACT_GOOGLE_REDIRECT_URI
-  })
-
-
-    React.useEffect(() => {
-      if(response?.type === 'success') {
-        const {authentication} = response;
-        console.log(authentication)
-      }
-    }, [response])
+  const { promptAsync } = useGoogle();
 
   return (
     <ContainerPage>
