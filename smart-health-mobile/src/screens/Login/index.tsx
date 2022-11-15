@@ -18,8 +18,8 @@ import LogoApp from "../../assets/ProjectLogo.png";
 
 export function Login() {
   const [request, response, promptAsync] = Google.useAuthRequest({
-    expoClientId: '599608998940-0foa5l32pvit86ko6nejgoojtn6l6mfi.apps.googleusercontent.com',
-    redirectUri: 'https://auth.expo.io/@rianlandim/smart-health-mobile'
+    expoClientId: process.env.REACT_GOOGLE_CLIENT_ID,
+    redirectUri: process.env.REACT_GOOGLE_REDIRECT_URI
   })
 
 
@@ -42,7 +42,7 @@ export function Login() {
       </InformationsContainer>
 
       <FooterContainer>
-        <SocialButton>
+        <SocialButton onPress={() => promptAsync()}>
           <LogoGoogle style={{ width: 24, height: 24 }} source={logoGoogle} />
           <SocialButtonText>Entrar com o google</SocialButtonText>
         </SocialButton>
