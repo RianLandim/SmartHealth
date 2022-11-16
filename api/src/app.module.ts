@@ -1,9 +1,8 @@
 import { Module } from '@nestjs/common';
 import { HttpModule } from './http/http.module';
-import { TestModule } from './test/test.module';
 
 @Module({
-  imports: [HttpModule, TestModule],
+  imports: [HttpModule],
   providers: [],
 })
 export class AppModule {}
