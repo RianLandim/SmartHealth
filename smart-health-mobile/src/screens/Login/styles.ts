@@ -22,7 +22,6 @@ export const InformationsContainer = styled.View`
   padding: 10px 10%;
 `;
 export const TitleText = styled.Text`
-  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
@@ -31,7 +30,6 @@ export const TitleText = styled.Text`
   color: #f1f1f1;
 `;
 export const SubTitleText = styled.Text`
-  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -56,7 +54,6 @@ export const SocialButton = styled.TouchableOpacity`
 `;
 export const LogoGoogle = styled.Image``;
 export const SocialButtonText = styled.Text`
-  font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
   font-size: 18px;

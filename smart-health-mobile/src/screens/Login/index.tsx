@@ -16,9 +16,16 @@ import {
 import logoGoogle from "../../assets/logo-google.png";
 import LogoApp from "../../assets/ProjectLogo.png";
 import { useGoogle } from "../../context/google-auth";
+import { useNavigation } from "@react-navigation/native";
 
 export function Login() {
   const { promptAsync } = useGoogle();
+  const navigator = useNavigation();
+
+  async function handleGoogle() {
+    await promptAsync()
+    navigator.navigate('dashboard' as never)
+  }
 
   return (
     <ContainerPage>
@@ -32,7 +39,7 @@ export function Login() {
       </InformationsContainer>
 
       <FooterContainer>
-        <SocialButton onPress={() => promptAsync()}>
+        <SocialButton onPress={() => handleGoogle()}>
           <LogoGoogle style={{ width: 24, height: 24 }} source={logoGoogle} />
           <SocialButtonText>Entrar com o google</SocialButtonText>
         </SocialButton>

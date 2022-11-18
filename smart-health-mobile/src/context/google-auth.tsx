@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from "react"
 import * as Google from "expo-auth-session/providers/google"
 import { AuthRequestPromptOptions, AuthSessionResult } from "expo-auth-session";
+import api from "../service/http/api";
 
 interface GoogleAuthContextProps {
   acessToken: string | undefined;
@@ -24,6 +25,7 @@ export const GoogleAuthProvider = ({ children } : GoogleAuthProviderProps) => {
   useEffect(() => {
     if(response?.type === 'success') {
       const {authentication} = response;
+      api.defaults.headers.common.authorization = authentication?.accessToken
       setAcessToken(authentication?.accessToken);
     }
   }, [response])
