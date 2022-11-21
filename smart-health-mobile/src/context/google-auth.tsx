@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from "react"
-import * as Google from "expo-auth-session/providers/google"
+import { useAuthRequest } from "expo-auth-session/providers/google"
 import { AuthRequestPromptOptions, AuthSessionResult } from "expo-auth-session";
 import api from "../service/http/api";
 
@@ -17,7 +17,7 @@ const GoogleAuthContext = createContext<GoogleAuthContextProps>({} as GoogleAuth
 export const GoogleAuthProvider = ({ children } : GoogleAuthProviderProps) => {
   const [acessToken, setAcessToken] = useState<string | undefined>()
   
-  const [request, response, promptAsync] = Google.useAuthRequest({
+  const [request, response, promptAsync] = useAuthRequest({
     expoClientId: process.env.REACT_GOOGLE_CLIENT_ID,
     redirectUri: process.env.REACT_GOOGLE_REDIRECT_URI
   })
