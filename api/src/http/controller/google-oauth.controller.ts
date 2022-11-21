@@ -1,19 +1,13 @@
-import { Controller, Get, Req, Res, UseGuards } from '@nestjs/common';
-import { Request, Response } from 'express';
-import { GoogleOauthGuard } from '../auth/google-oauth.guard';
+import { Controller, Get } from '@nestjs/common';
+import { GoogleFitDataSources } from '../../service/google-datasource.service';
+import { Token } from '../auth/decorator/current-token';
 
-@Controller('auth')
-export class GoogleOauthController {
+@Controller('datasource')
+export class GoogleFitController {
+  constructor(private googleFitService: GoogleFitDataSources) {}
+
   @Get()
-  @UseGuards(GoogleOauthGuard)
-  async googleAuth(@Req() _req: any) {
-    return _req;
-  }
-
-  @Get('redirect')
-  @UseGuards(GoogleOauthGuard)
-  async googleAuthRedirect(@Req() req: Request, @Res() res: Response) {
-    // For now, we'll just show the user object
-    return req.user;
+  async getDataSources(@Token() token: string) {
+    return this.googleFitService.getDataSoucers(token);
   }
 }
