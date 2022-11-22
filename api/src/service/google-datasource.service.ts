@@ -1,13 +1,15 @@
 import { Injectable } from '@nestjs/common';
-import axios from 'axios';
+import { HttpService } from '@nestjs/axios';
 
 @Injectable()
 export class GoogleFitDataSources {
-  async getDataSoucers(token: string) {
-    axios.defaults.headers.common.authorization = token;
-    const { data } = await axios.get(
-      process.env.FITNESS_API_URL + 'dataSources',
+  constructor(private http: HttpService) {}
+
+  async getDataSoucers() {
+    const { data } = await this.http.axiosRef.get(
+      'https://www.googleapis.com/fitness/v1/users/me/dataSources',
     );
+    console.log(data);
     return data;
   }
 }

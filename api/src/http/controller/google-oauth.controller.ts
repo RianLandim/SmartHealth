@@ -1,13 +1,14 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, UseInterceptors } from '@nestjs/common';
 import { GoogleFitDataSources } from '../../service/google-datasource.service';
-import { Token } from '../auth/decorator/current-token';
+import { HttpInterceptor } from '../../utils/api';
 
 @Controller('datasource')
 export class GoogleFitController {
   constructor(private googleFitService: GoogleFitDataSources) {}
 
   @Get()
-  async getDataSources(@Token() token: string) {
-    return this.googleFitService.getDataSoucers(token);
+  @UseInterceptors(HttpInterceptor)
+  async getDataSources() {
+    return this.googleFitService.getDataSoucers();
   }
 }

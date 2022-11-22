@@ -6,9 +6,10 @@ import { GoogleFitController } from './controller/google-oauth.controller';
 import { ActivityController } from './controller/activity.controller';
 import { ActivityService } from '../service/activity.service';
 import { GoogleFitDataSources } from '../service/google-datasource.service';
+import { HttpModule as AxiosModule } from '@nestjs/axios';
 
 @Module({
-  imports: [],
+  imports: [AxiosModule],
   controllers: [UsersController, GoogleFitController, ActivityController],
   providers: [
     UsersService,
