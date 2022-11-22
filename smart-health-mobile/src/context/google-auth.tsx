@@ -19,13 +19,14 @@ export const GoogleAuthProvider = ({ children } : GoogleAuthProviderProps) => {
   
   const [request, response, promptAsync] = useAuthRequest({
     expoClientId: process.env.REACT_GOOGLE_CLIENT_ID,
-    redirectUri: process.env.REACT_GOOGLE_REDIRECT_URI
+    redirectUri: process.env.REACT_GOOGLE_REDIRECT_URI,
+    scopes: ['https://www.googleapis.com/auth/fitness.activity.read']
   })
 
   useEffect(() => {
     if(response?.type === 'success') {
       const {authentication} = response;
-      api.defaults.headers.common.authorization = authentication?.accessToken
+      api.defaults.headers.common.authorization = `Bearer ${authentication?.accessToken}`
       setAcessToken(authentication?.accessToken);
     }
   }, [response])

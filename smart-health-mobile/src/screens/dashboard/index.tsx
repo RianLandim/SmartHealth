@@ -12,7 +12,6 @@ export default function Dashboard() {
     return data;
   })
 
-  console.log(dataSource);
 
   return (
     <Container>
