@@ -1,5 +1,5 @@
 import React from "react";
-import * as Google from "expo-auth-session/providers/google"
+import * as Google from "expo-auth-session/providers/google";
 import {
   ContainerPage,
   FooterContainer,
@@ -23,8 +23,8 @@ export function Login() {
   const navigator = useNavigation();
 
   async function handleGoogle() {
-    await promptAsync()
-    navigator.navigate('dashboard' as never)
+    await promptAsync();
+    navigator.navigate("mytabs" as never);
   }
 
   return (
@@ -39,7 +39,11 @@ export function Login() {
       </InformationsContainer>
 
       <FooterContainer>
-        <SocialButton onPress={() => handleGoogle()}>
+        <SocialButton
+          onPress={() => {
+            navigator.navigate("mytabs" as never);
+          }}
+        >
           <LogoGoogle style={{ width: 24, height: 24 }} source={logoGoogle} />
           <SocialButtonText>Entrar com o google</SocialButtonText>
         </SocialButton>

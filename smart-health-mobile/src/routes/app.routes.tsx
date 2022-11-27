@@ -1,15 +1,15 @@
-import React from 'react'
+import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Login } from "../screens/Login";
-import Dashboard from '../screens/dashboard';
+import { Login } from "../screens/login";
+import Dashboard from "../screens/dashboard";
+import { BottomNavigationBar } from "../screens/bottomNavigationBar";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
 export function AppRoutes() {
   return (
     <Navigator screenOptions={{ headerShown: false }}>
-      <Screen name="login" component={Login} />
-      <Screen name="dashboard" component={Dashboard} />
+      <Screen name="bottomNavigationBar" component={BottomNavigationBar} />
     </Navigator>
   );
 }
