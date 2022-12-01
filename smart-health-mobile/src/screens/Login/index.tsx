@@ -1,5 +1,4 @@
 import React from "react";
-import * as Google from "expo-auth-session/providers/google"
 import {
   ContainerPage,
   FooterContainer,

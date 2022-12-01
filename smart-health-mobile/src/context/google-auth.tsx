@@ -20,8 +20,9 @@ export const GoogleAuthProvider = ({ children } : GoogleAuthProviderProps) => {
   const [request, response, promptAsync] = useAuthRequest({
     expoClientId: process.env.REACT_GOOGLE_CLIENT_ID,
     redirectUri: process.env.REACT_GOOGLE_REDIRECT_URI,
-    scopes: ['https://www.googleapis.com/auth/fitness.activity.read']
+    scopes: ['https://www.googleapis.com/auth/fitness.activity.read', 'email', 'profile']
   })
+
 
   useEffect(() => {
     if(response?.type === 'success') {

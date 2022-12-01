@@ -16,7 +16,7 @@
 
 ### 1. Docker
  
-Need to install docker and docker compose to can run our database container
+Need to install [docker](https://www.docker.com/get-started/) and [docker compose](https://docs.docker.com/compose/) to can run our database container
 
 Doing that you need to run command:
 
