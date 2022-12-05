@@ -9,7 +9,8 @@ export const ContainerPage = styled.SafeAreaView`
 // ===> Config da header que possui a logo
 export const HeaderContainer = styled.View`
   flex: 2;
-  width: 100%;
+  /* width: 100%; */
+  margin-left: 50px;
   justify-content: center;
 `;
 export const LogoImage = styled.Image``;

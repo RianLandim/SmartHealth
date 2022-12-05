@@ -14,7 +14,7 @@ import {
   TitleText,
 } from "./styles";
 import logoGoogle from "../../assets/logo-google.png";
-import LogoApp from "../../assets/ProjectLogo.png";
+import LogoApp from "../../assets/logo.png";
 import { useGoogle } from "../../context/google-auth";
 import { useNavigation } from "@react-navigation/native";
 
@@ -24,13 +24,13 @@ export function Login() {
 
   async function handleGoogle() {
     await promptAsync();
-    navigator.navigate("mytabs" as never);
+    navigator.navigate("bottomNavigationBar" as never);
   }
 
   return (
     <ContainerPage>
       <HeaderContainer>
-        <LogoImage style={{ width: 280, height: 280 }} source={LogoApp} />
+        <LogoImage style={{ width: 130, height: 130 }} source={LogoApp} />
       </HeaderContainer>
 
       <InformationsContainer>
@@ -41,7 +41,7 @@ export function Login() {
       <FooterContainer>
         <SocialButton
           onPress={() => {
-            navigator.navigate("mytabs" as never);
+            navigator.navigate("bottomNavigationBar" as never);
           }}
         >
           <LogoGoogle style={{ width: 24, height: 24 }} source={logoGoogle} />
