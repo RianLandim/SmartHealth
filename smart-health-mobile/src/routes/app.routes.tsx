@@ -1,9 +1,7 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Login } from "../screens/login";
-import Dashboard from "../screens/dashboard";
+import { Login } from "../screens/Login";
 import { BottomNavigationBar } from "../screens/bottomNavigationBar";
-
 const { Navigator, Screen } = createNativeStackNavigator();
 
 export function AppRoutes() {

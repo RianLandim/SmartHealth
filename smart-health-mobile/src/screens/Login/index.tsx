@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import * as Google from "expo-auth-session/providers/google";
 import {
   ContainerPage,
@@ -15,12 +15,31 @@ import {
 } from "./styles";
 import logoGoogle from "../../assets/logo-google.png";
 import LogoApp from "../../assets/logo.png";
-import { useGoogle } from "../../context/google-auth";
 import { useNavigation } from "@react-navigation/native";
+import { useAuthRequest } from "expo-auth-session/providers/google";
+import api from "../../service/http/api";
 
 export function Login() {
-  const { promptAsync } = useGoogle();
   const navigator = useNavigation();
+
+  const [acessToken, setAcessToken] = useState<string | undefined>();
+
+  const [request, response, promptAsync] = useAuthRequest({
+    expoClientId: process.env.REACT_GOOGLE_CLIENT_ID,
+    redirectUri: process.env.REACT_GOOGLE_REDIRECT_URI,
+    scopes: [
+      "https://www.googleapis.com/auth/fitness.activity.read",
+      "email",
+      "profile",
+    ],
+  });
+
+  if (response?.type === "success") {
+    const { authentication } = response;
+    api.defaults.headers.common.authorization = `Bearer ${authentication?.accessToken}`;
+    setAcessToken(authentication?.accessToken);
+    console.log(response);
+  }
 
   async function handleGoogle() {
     await promptAsync();
@@ -41,7 +60,7 @@ export function Login() {
       <FooterContainer>
         <SocialButton
           onPress={() => {
-            navigator.navigate("bottomNavigationBar" as never);
+            handleGoogle();
           }}
         >
           <LogoGoogle style={{ width: 24, height: 24 }} source={logoGoogle} />
