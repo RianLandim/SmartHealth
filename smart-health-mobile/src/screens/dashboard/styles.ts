@@ -9,15 +9,6 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     paddingBottom: "50%",
   },
-  appBar: {
-    marginTop: 45,
-    marginLeft: 20,
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    width: "90%",
-    fontFamily: "Inter_400Regular",
-  },
   title: {
     color: "#fff",
   },

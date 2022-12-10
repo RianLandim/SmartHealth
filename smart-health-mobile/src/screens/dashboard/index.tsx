@@ -14,6 +14,7 @@ import rainbowImg from "../../assets/rainbow.png";
 import caloriesImg from "../../assets/calories.png";
 import sleepHorsImg from "../../assets/sleepHors.png";
 import stepsImg from "../../assets/steps.png";
+import { AppBar } from "../../components/appBar";
 
 export default function Dashboard() {
   const { data: dataSource } = useQuery("getDataSource", async () => {
@@ -23,11 +24,7 @@ export default function Dashboard() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.appBar}>
-        <Text style={styles.title}>SMART HEALTH</Text>
-        {/* <FontAwesome name="heartbeat" size={30} color="#FF9900" /> */}
-        <Ionicons name="notifications" size={30} color="#6F6F6F" />
-      </View>
+      <AppBar />
 
       <Text style={styles.subtitle}>Saúde</Text>
 
