@@ -26,7 +26,7 @@ export default function Dashboard() {
     <SafeAreaView style={styles.container}>
       <AppBar />
 
-      <Text style={styles.subtitle}>Saúde</Text>
+      {/* <Text style={styles.subtitle}>Saúde</Text> */}
 
       <View style={styles.body}>
         <View style={styles.painel}>

@@ -2,10 +2,10 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
 
 // Screens
-import Dashboard from "../dashboard";
-import { Ranking } from "../ranking";
-import { Training } from "../training";
-import { Profile } from "../profile";
+import Dashboard from "../Dashboard";
+import { Ranking } from "../Ranking";
+import { Training } from "../Training";
+import { Profile } from "../Profile";
 
 // Icons
 import { Feather } from "@expo/vector-icons";

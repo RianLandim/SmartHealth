@@ -1,13 +1,24 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 export function AppBar() {
+  const navigator = useNavigation();
+
+  navigator.navigate("bottomNavigationBar" as never);
+
   return (
     <View style={styles.appBar}>
       <Text style={styles.title}>SMART HEALTH</Text>
-      <Ionicons name="notifications" size={30} color="#6F6F6F" />
+      <TouchableOpacity
+        onPress={() => {
+          navigator.navigate("notifications" as never);
+        }}
+      >
+        <Ionicons name="notifications" size={30} color="#6F6F6F" />
+      </TouchableOpacity>
     </View>
   );
 }
