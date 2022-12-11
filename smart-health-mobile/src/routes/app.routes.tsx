@@ -4,7 +4,7 @@ import { Login } from "../screens/Login";
 import { BottomNavigationBar } from "../screens/BottomNavigationBar";
 import { Notifications } from "../screens/Notifications";
 import { Sleep } from "../screens/Sleep";
-import { Weight } from "../screens/weight";
+import { Weight } from "../screens/Weight";
 const { Navigator, Screen } = createNativeStackNavigator();
 
 export function AppRoutes() {

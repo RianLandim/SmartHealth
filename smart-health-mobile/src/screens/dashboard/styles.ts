@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     backgroundColor: "#111111",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingBottom: "50%",
+    paddingBottom: "30%",
   },
   title: {
     color: "#fff",
