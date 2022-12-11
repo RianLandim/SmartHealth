@@ -1,5 +1,11 @@
 import React, { useEffect } from "react";
-import { SafeAreaView, Text, View, Image } from "react-native";
+import {
+  SafeAreaView,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import { useQuery } from "react-query";
 import api from "../../service/http/api";
 import { styles } from "./styles";
@@ -15,8 +21,11 @@ import caloriesImg from "../../assets/calories.png";
 import sleepHorsImg from "../../assets/sleepHors.png";
 import stepsImg from "../../assets/steps.png";
 import { AppBar } from "../../components/appBar";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Dashboard() {
+  const navigator = useNavigation();
+
   const { data: dataSource } = useQuery("getDataSource", async () => {
     const { data } = await api.get("datasource");
     return data;
@@ -27,7 +36,6 @@ export default function Dashboard() {
       <AppBar />
 
       {/* <Text style={styles.subtitle}>Saúde</Text> */}
-
       <View style={styles.body}>
         <View style={styles.painel}>
           <Image source={rainbowImg} />
@@ -52,15 +60,21 @@ export default function Dashboard() {
           <Text style={styles.cardText}>PROGRESSÃO</Text>
         </View>
 
-        <View style={styles.card}>
+        <TouchableOpacity
+          style={styles.card}
+          onPress={() => navigator.navigate("sleep" as never)}
+        >
           <Image style={styles.cardImage} source={sleepImg} />
           <Text style={styles.cardText}>Sono</Text>
-        </View>
+        </TouchableOpacity>
 
-        <View style={styles.card}>
+        <TouchableOpacity
+          style={styles.card}
+          onPress={() => navigator.navigate("weight" as never)}
+        >
           <Image style={styles.cardImage} source={weightImg} />
           <Text style={styles.cardText}>Peso</Text>
-        </View>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
