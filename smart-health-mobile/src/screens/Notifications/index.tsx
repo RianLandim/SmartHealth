@@ -25,7 +25,7 @@ export function Notifications() {
       <View style={styles.body}>
         <View style={styles.notification}>
           <Text style={styles.notificationText}>
-            Daniel, tente fazer alguma atividade física hoje! Faz dois dias que
+            Rian, tente fazer alguma atividade física hoje! Faz dois dias que
             não se exercita!
           </Text>
         </View>
