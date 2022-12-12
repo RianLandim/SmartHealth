@@ -7,8 +7,6 @@ import { useNavigation } from "@react-navigation/native";
 export function AppBar() {
   const navigator = useNavigation();
 
-  navigator.navigate("bottomNavigationBar" as never);
-
   return (
     <View style={styles.appBar}>
       <Text style={styles.title}>SMART HEALTH</Text>

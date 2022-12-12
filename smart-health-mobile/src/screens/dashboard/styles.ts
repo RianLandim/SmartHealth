@@ -5,9 +5,8 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#111111",
-    justifyContent: "space-between",
     alignItems: "center",
-    paddingBottom: "30%",
+    paddingBottom: "40%",
   },
   title: {
     color: "#fff",

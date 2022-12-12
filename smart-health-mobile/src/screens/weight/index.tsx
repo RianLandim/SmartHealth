@@ -13,7 +13,7 @@ export function Weight() {
     <SafeAreaView style={styles.container}>
       <View style={styles.top}>
         <TouchableOpacity
-          onPress={() => navigator.navigate("dashboard" as never)}
+          onPress={() => navigator.navigate("bottomNavigationBar" as never)}
         >
           <MaterialIcons
             name="arrow-back-ios"

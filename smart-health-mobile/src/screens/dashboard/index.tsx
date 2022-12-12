@@ -55,10 +55,13 @@ export default function Dashboard() {
           </View>
         </View>
 
-        <View style={styles.card}>
+        <TouchableOpacity
+          style={styles.card}
+          onPress={() => navigator.navigate("progression" as never)}
+        >
           <Image style={styles.cardImage} source={progressionImg} />
           <Text style={styles.cardText}>PROGRESSÃO</Text>
-        </View>
+        </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.card}
