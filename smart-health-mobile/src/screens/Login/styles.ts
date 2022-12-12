@@ -29,7 +29,6 @@ export const TitleText = styled.Text`
   line-height: 48px;
   width: 70%;
   color: #f1f1f1;
-  font-family: "Inter";
 `;
 export const SubTitleText = styled.Text`
   font-style: normal;
@@ -64,7 +63,6 @@ export const SocialButtonText = styled.Text`
   align-items: center;
   margin-left: 15px;
   color: #2d2d2d;
-  font-family: "Inter";
 `;
 export const ImgLogoGoogle = styled.Image`
   width: 40px;
