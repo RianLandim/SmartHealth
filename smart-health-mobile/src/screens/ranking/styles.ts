@@ -4,12 +4,13 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#111111",
-    justifyContent: "space-between",
+    // justifyContent: "space-between",
     alignItems: "center",
   },
   title: {
     color: "#fff",
     fontSize: 24,
+    marginTop: 40,
   },
   friendsRanking: {
     backgroundColor: "#6F6F6F",
@@ -24,10 +25,12 @@ export const styles = StyleSheet.create({
   top: {
     display: "flex",
     flexDirection: "row",
+    marginTop: 20,
   },
   addFriend: {
     width: 140,
     backgroundColor: "#6F6F6F",
+    borderRadius: 10,
 
     height: 50,
     marginTop: 10,

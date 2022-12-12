@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, ScrollView } from "react-native";
+import { View, Text, Image, ScrollView, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { AppBar } from "../../components/appBar";
 import { styles } from "./styles";
@@ -17,9 +17,9 @@ export function Ranking() {
             <View></View>
           </View>
         </View>
-        <View style={styles.addFriend}>
+        <TouchableOpacity style={styles.addFriend}>
           <Text>Adicionar Amigo</Text>
-        </View>
+        </TouchableOpacity>
         <View style={styles.evolution}>
           <Text style={styles.evolutionTitle}>Evoluçao</Text>
           <Image source={evolution} />

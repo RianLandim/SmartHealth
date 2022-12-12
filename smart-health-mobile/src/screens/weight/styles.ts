@@ -18,12 +18,11 @@ export const styles = StyleSheet.create({
     fontSize: 24,
     textAlign: "center",
     marginLeft: 120,
+    fontFamily: "Inter_400Regular",
   },
   body: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
     marginTop: 40,
+    marginLeft: 30,
   },
   cardTime: {
     backgroundColor: "#464848",
@@ -59,5 +58,28 @@ export const styles = StyleSheet.create({
   hours: {
     color: "#fff",
     fontSize: 15,
+  },
+  weight: {
+    fontSize: 22,
+    color: "#fff",
+  },
+  dateWeight: {
+    color: "#969595",
+    fontSize: 16,
+    fontFamily: "Inter_400Regular",
+    marginTop: 10,
+    marginBottom: 40,
+  },
+  tip: {
+    fontSize: 19,
+    fontFamily: "Inter_400Regular",
+    color: "#fff",
+    marginTop: 40,
+    marginBottom: 60,
+  },
+  note: {
+    fontSize: 14,
+    color: "#fff",
+    fontFamily: "Inter_400Regular",
   },
 });
